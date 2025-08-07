@@ -5,10 +5,13 @@
 void inicializarVuelos(int[][6]);
 int parapente(int, int);
 int precio (int);
+void mostrarVuelos(int[][6]);
 	 
 int main() {
-	int vuelos [10][6];
+	int vuelos[10][6] = {0};
 	srand(time(NULL));
+    inicializarVuelos(vuelos);
+    mostrarVuelos(vuelos);
 	return 0;
 }
 
@@ -19,7 +22,7 @@ void inicializarVuelos(int vuelos[10][6]){
 	for(int i = 0; i < 10; i++){
 		
 		vuelos[i][0] = 	pasajero + 1;
-		pasajero = vuelos[1][i];
+		pasajero = vuelos[i][0];
 		vuelos[i][1] = rand()%(110 - 50 + 1) + 50;
 		vuelos[i][2] = rand()%(3 - 1 + 1) + 50;
 		vuelos[i][3] = parapente(vuelos[i][2], vuelos[i][1]);
@@ -54,4 +57,11 @@ int precio(int parapente){
 	case 52: precio = 55000; break;
 	}
 	return precio;
+}
+
+void mostrarVuelos(int vuelos[10][6]){
+    printf("ID\tPeso\tInstructor\tParapente\tPrecio\n");
+    for(int i = 0; i < 10; i++){
+        printf("%d\t%d\t%d\t\t%d\t\t%d\n", vuelos[i][0], vuelos[i][1], vuelos[i][2], vuelos[i][3], vuelos[i][4]);
+    }
 }
