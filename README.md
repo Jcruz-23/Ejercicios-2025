@@ -1,1 +1,0 @@
-# Ejercicios-2025
