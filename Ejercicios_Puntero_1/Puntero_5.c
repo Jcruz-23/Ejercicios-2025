@@ -18,23 +18,11 @@ int main(){
 float suma(float *y, float *x){
     return (*y+*x);
 }
-float resta(float *y, float *x){
-    return(*y-*x);
-}
-float mult(float *y, float *x){
-    return(*y * *x);
-}
-float divi(float *y, float *x){
-    return(*y / *x);
-}
-float pot(float *y, float *x){
-    float res = (float)pow(*y,*x);
-    return res;
-}
-float raiz(float *y, float *x){
-    float res = (float)pow (*y, 1.0/ *x);
-    return res;
-}
+float resta(float *y, float *x){ return(*y-*x);}
+float mult(float *y, float *x){ return(*y * *x);}
+float divi(float *y, float *x){ return(*y / *x);}
+float pot(float *y, float *x){ float res = (float)pow(*y,*x); return res;}
+float raiz(float *y, float *x){ float res = (float)pow (*y, 1.0/ *x); return res;}
 
 void menu(){
 int op = 0;
