@@ -48,7 +48,6 @@ void mostrar(char *p, int n){
         printf("%c\t",*(p + i));
         }
      printf("\n");
-
 }
 
 
