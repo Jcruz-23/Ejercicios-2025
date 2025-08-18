@@ -16,6 +16,7 @@ int main(){
 
     if (p == NULL){
         printf("\a\nError al asignar memoria");
+        return 1;   
     }else {
         asignacion(p, n);
         free(p);

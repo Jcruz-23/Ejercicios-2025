@@ -12,7 +12,7 @@ Cada ítem es una función. Para recorrer el vector utilice punteros.
 #include <stdio.h>
 #include <stdlib.h>
 
-void menu(int *, int *);
+void menu(int *);
 void cargar(int *, int *);
 float prom(int *, int *);
 int menorProm(int*,int*, float );
@@ -22,30 +22,24 @@ int recaudado(int*, int*);
 
 int main(){
     int *saldos;
-    int cont = 0;
-    menu(saldos, &cont);
+    menu(saldos);
     return 0;
 }
 
 
 void cargar(int *saldos, int *cont){
-    int lim = 0;
     char fin = ' ';
-    int aux = 0;
-    printf("Cargue los saldos que desea (max. 10 saldos)\n");
-    do{
-        aux++;
-        printf("Saldo num %d: ", aux);
-        scanf(" %d", &*(saldos + lim));
-        lim ++;
-
-        printf("\nDesea agregar otro? S/N\n");
-        scanf(" %c", &fin);
-
-        if(fin == 'n' || fin == 'N'){lim = 11;}
-    }while(lim < 10);
-
-    *cont = aux;
+    printf("-Cargue los saldos que desea (max. 10 saldos)\n"
+           "-Si el saldo cargado es menos o igual a 0 se finalizara la carga\n");
+    for (int i = 0; i < 10; i++){
+        printf("Saldo num %d: ", i+1);
+        scanf(" %d", &*(saldos + i));
+        *cont = i + 1;
+        if(*(saldos + i) <= 0){
+            i = 11;
+        }
+    }
+ 
 }
 
 
@@ -70,7 +64,7 @@ return menor;
 
 int mayorProm(int *saldos, int *cont, float promedio){
     int mayor = 0;
-for(int i = 0; i < cont; i++){
+for(int i = 0; i < *cont; i++){
     if(*(saldos + i)>promedio)mayor++;
 }
 return mayor;
@@ -85,7 +79,7 @@ int recaudado(int *saldos, int *cont){
     return total;
 }
 
-void menu(int *saldos, int *cont){
+void menu(int *saldos){
     float promedio = 0;
     int mayor = 0;
     int menor = 0;
@@ -94,8 +88,9 @@ void menu(int *saldos, int *cont){
     char op = ' ';
     int flag1 = 0;
     int flag2 = 0;
+    int cont = 0;
     do{
-        system("clear");
+        system("cls");
         printf("\t------- MENU --------"
         "\na) Cargar saldos"
         "\nb) Mostrar promedio de saldos"
@@ -147,5 +142,7 @@ void menu(int *saldos, int *cont){
                }
         printf("\nDesea continuar? S/N");
         scanf(" %c", &fin);
+
+        if(fin == 'n' || fin == 'N') printf("\nSaliendo...");
     }while(fin == 's'|| fin == 'S');
 }

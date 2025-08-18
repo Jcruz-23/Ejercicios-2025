@@ -1,27 +1,28 @@
 {
-    "version": "2.0.0",
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "Compilar C con gcc y -lm",
-            "command": "/usr/bin/gcc",
+            "label": "C/C++: gcc.exe compilar archivo activo",
+            "command": "C:\\MinGW\\bin\\gcc.exe",
             "args": [
-                "-Wall",
-                "-Wextra",
+                "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
-                "-lm"
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
             },
-            "problemMatcher": ["$gcc"],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "detail": "Tarea generada por el depurador."
         }
-    ]
+    ],
+    "version": "2.0.0"
 }
