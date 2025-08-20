@@ -57,7 +57,7 @@ void agregar(char *p, int n){
     p2 = (char *) realloc(p, n2 * sizeof(char));
 
     if(p2 == NULL){
-        printf("\n\aError agregando memoria!");
+        printf("\n\aError agregando memoria!"); 
         free(p);
     }else{
         p = p2;
