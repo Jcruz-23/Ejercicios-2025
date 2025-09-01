@@ -58,6 +58,7 @@ void menu()
         scanf(" %c", &fin);
     } while (fin == 's' || fin == 'S');
 
+    free(p2);
     free(p);
 }
 int cargar(struct persona *p, int n)

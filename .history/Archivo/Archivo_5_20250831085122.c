@@ -42,7 +42,7 @@ void menu()
         }
         else
         {
-             p2 = realloc(p, (n+1) * sizeof(struct persona));
+             p2 = realloc(p, 1 * sizeof(struct persona));
             if (p2 == NULL)
             {
                 printf("\nError al asignar memoria");

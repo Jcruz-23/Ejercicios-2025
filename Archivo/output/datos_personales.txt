@@ -1,20 +1,13 @@
 
 ---------------Persona [1]---------------
-Nombre: h
-Apellido: 2
-DNI: 1684104297
-Nacionalidad: ds
-Edad: 23
+Nombre: hola
+Apellido: hola
+DNI: 123
+Nacionalidad: hola
+Edad: 123
 ---------------Persona [2]---------------
-Nombre: ------
-Nombre: ciona23
-Apellido: -
-Nombre: ciona23
-Apellido: 
-DNI: 1768713317
-Nacionalidad: do: -
-Nombre: ciona23
-Apellido: 
-DNI: 1768713317
-Nacionalidad: 
-Edad: 1883310643
+Nombre: chau
+Apellido: chau
+DNI: 123
+Nacionalidad: chau
+Edad: 123

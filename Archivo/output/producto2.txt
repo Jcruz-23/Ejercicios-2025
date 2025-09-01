@@ -1,0 +1,11 @@
+------------PRODUCTO[1]------------
+Nombre: a
+Marca: a
+Precio: 23
+Fecha(dia.mes): 9.0900
+Tamaño: 2------------PRODUCTO[2]------------
+Nombre: b
+Marca: b
+Precio: 21
+Fecha(dia.mes): 9.1000
+Tamaño: 2

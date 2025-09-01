@@ -30,28 +30,19 @@ void menu()
     {
         if (flag == 0)
         {
-            p = malloc(1 * sizeof(struct persona));
-            if (p == NULL)
-            {
-                printf("\nError al asignar memoria");
-                free(p);
-                fin = 'n';
-            };
             n = cargar(p, n);
             flag = 1;
         }
         else
         {
-             p2 = realloc(p, (n+1) * sizeof(struct persona));
+            n = agregar(p, n);
+            p2 = realloc(p, 1 * sizeof(struct persona));
             if (p2 == NULL)
             {
                 printf("\nError al asignar memoria");
-                free(p);
-                fin = 'n';
+                return 1;
             }
             p = p2;
-            n = agregar(p, n);
-           
         }
 
         printf("\nDesea agregar otra persona? (s/n)");
@@ -64,7 +55,12 @@ int cargar(struct persona *p, int n)
 {
     FILE *a;
     a = fopen("datos_personales.txt", "w");
-
+    p = malloc(1 * sizeof(struct persona));
+    if (p == NULL)
+    {
+        printf("\nError al asignar memoria");
+        return 0;
+    };
     printf("\n---------------Persona [%d]---------------", n + 1);
     printf("\nNombre: ");
     scanf(" %s", p[n].nombre);
