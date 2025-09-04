@@ -1,0 +1,5 @@
+
+-----------------------Cliente[1]-----------------------
+Nombre: hola
+Saldo: 23.000000
+Cuenta: ahorro
