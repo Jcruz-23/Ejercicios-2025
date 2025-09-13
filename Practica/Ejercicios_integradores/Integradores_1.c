@@ -55,11 +55,11 @@ int main(){
             case 3:
             printf("\nLiberando memoria. . .");
             free(p);
+            flagSalir = 1;
             return 0;
             break;
             default:
             printf("\nError!");
-            flagSalir = 1;
             break;
         }
 
@@ -100,4 +100,4 @@ void mostrar(struct persona *p, int n){
         printf("\nApellido: %s", (p+i)->apellido);
         printf("\nEdad: %d", (p+i)->edad);
     }
-}2
+}

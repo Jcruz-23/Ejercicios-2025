@@ -6,22 +6,23 @@ Tanto la dirección como la fecha de nacimiento son otras estructuras (estructur
 #include <stdlib.h>
 #include <ctype.h>
 
-struct contacto{
-    char nombre[20];
-    char apellido[20];
-    struct fecha;
-    struct direccion; 
-    int numero;
-};
 struct fecha{
-    int dia[10];
-    int mes[15]; 
+    int dia;
+    int mes; 
 };
 struct direccion{
     char localidad[20];
     char barrio[20];
-    int numeroCasa[20];
+    int numeroCasa;
 };
+struct contacto{
+    char nombre[20];
+    char apellido[20];
+    struct fecha fecha;
+    struct direccion direccion; 
+    int numero;
+};
+
 
 void menu();
 int ingresar(struct contacto *c, int);
@@ -83,25 +84,48 @@ void menu(){
     }while(fin == 's'||fin == 'S');
 
     free(c);
+
+    return 0;
 }
 
 
 int ingresar(struct contacto *c, int n){
     printf("\nNumero: ");
     scanf(" %d", &(c+n)->numero);
-    prinf("\nNombre: ");
+    getchar();
+    printf("\nNombre: ");
     fgets((c+n)->nombre, sizeof((c+n)->nombre), stdin);
     printf("\nApellido: ");
     fgets((c+n)->apellido, sizeof((c+n)->apellido), stdin);
     printf("\n-Fecha de nacimiento-");
     printf("\nMes: ");
-    scanf(" %d", &(c+n)->fecha->mes);
+    scanf(" %d", &(c+n)->fecha.mes);
     printf("\nDia: ");
-    scanf(" %d", &(c+n)->fecha->dia);
+    scanf(" %d", &(c+n)->fecha.dia);
+    printf("\n");
+    printf("\n------Domicilio------");
+    printf("\nLocalidad: ");
+    getchar();
+    fgets((c+n)->direccion.localidad, sizeof((c+n)->direccion.localidad), stdin);
+    printf("\nBarrio: ");
+    fgets((c+n)->direccion.barrio, sizeof((c+n)->direccion.barrio), stdin);
+    printf("\nNumero de casa: ");
+    scanf(" %d", &(c+n)->direccion.numeroCasa);
     printf("\n---------------------");
-    printf("\n")
+
+    n++;
+    return n;
+
 }
 
 void mostrar(struct contacto *c, int n){
-
+    for(int i = 0; i < n; i++){
+    printf("\n--------------------------------------------------------");
+    printf("\nNumero: %d", (c+i)->numero);
+    printf("\nNombre completo: %s %s", (c+i)->nombre, (c+i)->apellido);
+    printf("\nCumpleaños: %d/%d", (c+i)->fecha.dia, (c+i)->fecha.mes);
+    printf("\nLocalidad: %s", (c+i)->direccion.localidad);
+    printf("\nBrrio: %s",(c+i)->direccion.barrio);
+    printf("\nNumero de casa: %d", (c+i)->direccion.numeroCasa);
+    }
 }
