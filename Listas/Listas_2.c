@@ -71,7 +71,6 @@ void ingresar(struct Nodo **p, int v){
         *p = nuevo;
     }else{
         Nodo *aux = *p;
-
         while(aux->sig !=NULL){
             aux = aux->sig;
         }
