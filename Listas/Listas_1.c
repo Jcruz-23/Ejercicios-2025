@@ -55,7 +55,6 @@ void mostrar(struct Nodo *p){
 void liberar(struct Nodo **p){
     while(*p != NULL){
         Nodo *prox = (*p)->sig;
-
         free(*p);
         *p = prox;
     }
