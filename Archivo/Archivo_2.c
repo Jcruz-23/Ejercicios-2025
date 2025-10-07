@@ -45,6 +45,7 @@ int main(){
             while(fgets(linea, 100, a) != NULL){
                 printf("%s", linea);
             }
+            fclose(a);
             }
 
         printf("\nDesea continuar? (s/n): ");
