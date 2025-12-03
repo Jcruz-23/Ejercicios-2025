@@ -1,0 +1,3 @@
+
+cod | m2              | m2 cubiertos    | precio          | operacion       | ubicacion                      | estado    
+34  | 2344.00         | 123.00          | 0.00            | alquiler        | av colon                       | ocupado   

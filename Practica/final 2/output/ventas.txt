@@ -1,0 +1,2 @@
+|Cod  |Nombre          |Ventas  |Precio  |dia | mes |
+|234  |124             |415     |123.00  |1   | 2   |

@@ -1,0 +1,2 @@
+|nombre          |cantidad   |vendidos   |precio     |
+|R               |2          |1          |45.00      |
