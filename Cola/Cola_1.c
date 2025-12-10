@@ -75,7 +75,6 @@ void menu(){
     }while(fin == 's');
 }
 
-
 void encolar(Cola** frente, Cola** fin, int v){
     Cola* nuevo = (Cola*) malloc(sizeof(Cola));
     nuevo->valor = v;
